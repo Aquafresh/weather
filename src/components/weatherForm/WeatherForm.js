@@ -28,11 +28,15 @@ export default class WeatherForm extends Component {
 	getTemp() {
 		const cityName = this.state.city
 		const cities = this.state.cities
-
+		const $this = this;
 		axios.get('http://api.openweathermap.org/data/2.5/weather?q='+cityName+'&units=metric&appid=2509cbd7203a8d34c6e0c217881f6d0d')
 		  .then(function (response) {
 
-		    cities.push({name: cityName, temp: response.data.main.temp})
+		    cities.push({name: cityName, temp: response.data.main.temp});
+              $this.setState({cities: cities});
+              console.log('state',$this.state.cities);
+
+              $this.localStorageWrite($this.state.cities)
 
 		  })
 		  .catch(function (error) {
@@ -40,10 +44,8 @@ export default class WeatherForm extends Component {
 		  });
 		//App.getWeather(cities,cityName)
 
-		this.setState({cities: cities});
-		console.log('state',this.state.cities);
 
-		this.localStorageWrite(this.state.cities)
+
 
 	}
 

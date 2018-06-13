@@ -1,0 +1,51 @@
+body {
+	background: #424aad;
+	height: 100%;
+}
+
+.weatherForm {
+
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.weatherFormRow {
+	margin: 0 auto;
+	margin-top: 100px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 50px;
+}
+
+.weatherFormInput {
+	height: 36px;
+	padding-left: 5px;
+	box-shadow: 0px 1px 2px #000;
+	width: 200px;
+	margin-right: 20px;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+.weatherFormInput:focus,
+.weatherFormSubmit:focus {
+	outline: none;
+}
+
+.weatherFormSubmit {
+	background-color: #0062cc;
+	color: #fff;
+	border: none;
+	border-radius: 2px;
+	box-shadow: 0px 1px 2px #000;
+	cursor: pointer;
+	padding: 0 15px
+}
+
+.weatherFormSubmit:hover {
+	background-color: #0069d9;
+}
